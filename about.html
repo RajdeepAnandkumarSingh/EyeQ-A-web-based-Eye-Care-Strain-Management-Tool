@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About us</title>
+</head>
+<body>
+    <div id="nav">
+        <div class="logo">
+            <img src="logo4.jpg" alt="Eye care">
+            <h2>Eye Q</h2>
+        </div>
+        <div class="nav-links">  
+            <li><a href="#" id="goHome">Home</a></li> 
+            <li><a href="about.html" id="about">About us</a></li>   
+            <li><a href="Test.html" id="Test"> Take Test</a></li>
+            <li><button id="btnLogin-popup">Login</button></li>
+        </div>
+    </div>
+    <div id="container">
+    <h1>ABOUT US</h1>
+    <p>At EyeQ, we are dedicated to promoting better eye health through simple yet powerful practices. One of the most effective ways to take  care for your eyes is by following the 20-20-20 rule: every 20 minutes, take a 20-second break, and look at something 20 feet away. This simple habit helps reduce eye strain, especially for those who spend long hours in front of screens.
+        Why is this important? Regular breaks allow your eyes to rest and refocus, preventing common issues like dry eyes, headaches, and blurred vision. By giving your eyes the break they deserve, you improve focus, reduce discomfort, and maintain long-term eye health.     
+        Our mission is to help you incorporate these habits into your daily routine, ensuring that your eyes stay healthy and comfortable in our increasingly digital world. Let us guide you toward better eye care and well-being.</p>
+    </div>
+<script>
+   document.getElementById('goHome').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'index.html';  
+});
+
+document.getElementById('btnLogin-popup').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'index.html';  
+});
+
+</script>
+</body>
+</html>

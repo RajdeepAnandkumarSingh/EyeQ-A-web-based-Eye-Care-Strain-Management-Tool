@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Strain Level Predictor</title>
+    <link rel="stylesheet" href="Test.css">
+</head>
+<body>
+    <div id="nav">
+        <div class="logo">
+            <img src="logo4.jpg" alt="Eye care">
+            <h2>Eye Q</h2>
+        </div>
+        <div class="nav-links">  
+            <li><a href="#" id="goHome">Home</a></li> 
+            <li><a href="about.html" id="about">About us</a></li>   
+            <li><a href="Test.html" id="Test">Take Test</a></li>
+            <li><button id="btnLogin-popup">Login</button></li>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Eye Strain Level Predictor</h1>
+        <form id="strainForm">
+            <label for="screenTime">How many hours per day do you spend on digital screens?</label>
+            <input type="number" id="screenTime" min="0" max="24" value="0" required>
+
+            <label for="headaches">How often do you experience headaches after using screens?</label>
+            <input type="range" id="headaches" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="dryEyes">Do you experience dry, itchy, or watery eyes after screen use?</label>
+            <input type="range" id="dryEyes" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="blurryVision">Do you notice blurry vision after prolonged screen use?</label>
+            <input type="range" id="blurryVision" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="lightSensitivity">Do you feel sensitive to light after using screens?</label>
+            <input type="range" id="lightSensitivity" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="breaks">How often do you take breaks while working?</label>
+            <input type="range" id="breaks" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="focusIssues">Do you have trouble focusing on distant or near objects after screen use?</label>
+            <input type="range" id="focusIssues" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="neckPain">Do you experience neck, shoulder, or back pain after extended screen use?</label>
+            <input type="range" id="neckPain" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="screenDistance">Do you feel discomfort when viewing screens at a normal viewing distance?</label>
+            <input type="range" id="screenDistance" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <label for="eyeRedness">How often do your eyes appear red or irritated after using screens?</label>
+            <input type="range" id="eyeRedness" min="1" max="10" step="1" value="1">
+            <div class="range-labels">
+                <span>1</span><span>10</span>
+            </div>
+
+            <button type="button" onclick="predictStrainLevel()">Predict Strain Level</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+    function predictStrainLevel() {
+    const screenTime = parseInt(document.getElementById('screenTime').value);
+    const headaches = parseInt(document.getElementById('headaches').value);
+    const dryEyes = parseInt(document.getElementById('dryEyes').value);
+    const blurryVision = parseInt(document.getElementById('blurryVision').value);
+    const lightSensitivity = parseInt(document.getElementById('lightSensitivity').value);
+    const breaks = parseInt(document.getElementById('breaks').value);
+    const focusIssues = parseInt(document.getElementById('focusIssues').value);
+    const neckPain = parseInt(document.getElementById('neckPain').value);
+    const screenDistance = parseInt(document.getElementById('screenDistance').value);
+    const eyeRedness = parseInt(document.getElementById('eyeRedness').value);
+
+    const totalScore = screenTime + headaches + dryEyes + blurryVision + lightSensitivity + focusIssues + neckPain + screenDistance + eyeRedness - breaks;
+
+    let strainLevel = '';
+    let colorClass = '';
+
+    if (totalScore <= 20) {
+        strainLevel = 'Low';
+        colorClass = 'low-strain';
+    } else if (totalScore <= 45) {
+        strainLevel = 'Moderate';
+        colorClass = 'moderate-strain';
+    } else {
+        strainLevel = 'High';
+        colorClass = 'high-strain';
+    }
+
+const resultDiv = document.getElementById('result');
+resultDiv.innerHTML = `<strong>Your eye strain level is: ${strainLevel}</strong>`;
+resultDiv.className = colorClass;
+}
+
+document.getElementById('goHome').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            window.location.href = 'index.html';  
+});
+
+document.getElementById('about').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'about.html';  
+});      
+
+document.getElementById('btnLogin-popup').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    window.location.href = 'index.html';  
+});
+           
+</script>
+</body>
+</html>

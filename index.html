@@ -1,0 +1,136 @@
+First File
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body>
+    <div id="chatbot">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+    chat-icon="https://play-lh.googleusercontent.com/R6OYBOu_T1D-oI7juBAbW36ys3l6INUM-DLkqLKEyJav0G54WqKo0-HeVdfov2YYLnKo"
+    intent="WELCOME"
+    chat-title="EyeQ"
+    agent-id="2d4c2ec2-9d57-40eb-91f4-91e02ada3c48"
+    language-code="en"
+     ></df-messenger>
+    </div>
+    <div id="main">
+        <div class="Wrapper">
+            <span class="icon-close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                   <div class="input-box">
+                        <input type="email" required>
+                        <label>Email</label>
+                   </div>
+                   <div class="input-box">
+                       <input type="Password" required>
+                       <label>Password</label>
+                  </div>
+                  <div class="remember-forgot">
+                  <label><input type="checkbox">Remember me</label>
+                  <a href="#">Forgot Password</a>
+                  </div>
+                  <button type="Submit" class="btn">Login</button>
+               <div class="login-register">
+                <p>Don't have an account?<a href="#"
+                    class="register-link">Register</a></p>
+               </div>
+                </form>
+            </div>
+            <div class="form-box Register">
+                <h2>Registration</h2>
+                <form action="#">
+                   <div class="input-box">
+                        <input type="text" required>
+                        <label>Username</label>
+                   </div>
+                   <div class="input-box">
+                    <input type="email" required>
+                    <label>Email</label>
+               </div>
+                   <div class="input-box">
+                       <input type="Password" required>
+                       <label>Password</label>
+                  </div>
+                  <div class="remember-forgot">
+                  <label><input type="checkbox">I agree to terms and conditions</label>
+                  </div>
+                  <button type="Submit" class="btn">Register</button>
+               <div class="login-register">
+                <p>Already have an account?<a href="#"
+                    class="login-link">Login</a></p>
+               </div>
+                </form>
+            </div>
+        </div>   
+    <div id="cursor">
+
+    </div>
+    <div id="nav">
+        <div class="logo">
+            <img src="logo4.jpg" alt="Eye care">
+            <h2>Eye Q</h2>
+        </div>
+        <div class="nav-links">
+            <li><a href="#" id="homeLink"> Home</a></li>
+            <li><a href="about.html" id="about">About us</a></li>
+            <li><a href="Test.html" id="Test">Take Test</a></li>
+            <li><button class="btnLogin-popup">Login</button></li>
+        </div>
+    </div>
+    <div id="page1">
+        <h1>EYE Q</h1>
+        <h3>YOUR EYES </h3>
+        <h3>DESERVES THE BEST</h3>
+    </div>
+    <div id="page2">
+        <div id="section">
+        <div class="secleft">
+            <h2>20-20-20 RULE</h2>
+           <p>The 20-20-20 rule helps reduce eye strain from screen use: every 20 minutes, look at something 20 feet away for 20 seconds. This simple practice relaxes eye muscles and prevents symptoms like headaches and blurred vision, promoting better eye health during extended screen time.</p>
+        </div>
+        <div class="secright">
+            <video loop src="Project video.mp4"></video>
+        </div>
+        </div>
+    </div>
+    <div id="page3">
+        <div class="container">
+            <h1>Eye Care Reminder</h1>
+            <p>It's important to take regular breaks to rest your eyes.</p>
+    
+            <div class="button-group">
+                <button id="startButton">Start Alarm</button>
+                <button id="toneButton" class="dropbtn" onclick="toggleToneMenu()">Select Tone</button>
+            </div>
+    
+            <div id="toneMenu" class="dropbtn">
+                <button onclick="setTone('Tone1.mp3')">Tone 1</button>
+                <button onclick="setTone('Tone2.mp3')">Tone 2</button>
+                <button onclick="setTone('Tone3.mp3')">Tone 3</button>
+                <button onclick="setTone('Tone4.wav')">Tone 4</button>
+            </div>
+    
+            <button id="stopButton" style="display: none;">Stop Alarm</button>
+            <button id="snoozeButton" style="display: none;">Snooze</button>
+    
+            <audio id="bellSound" preload="auto">
+                <source id="audioSource" src="Tone1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.js" integrity="sha512-alUs/9QWS9TdxYygQKopHrjMK9T+Tun55+1EKgiG8lCSHSL2Br7p69RsCFCycu2T2I707/8Y0vkyjTVGHdfHUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
